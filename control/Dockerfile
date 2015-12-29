@@ -24,7 +24,7 @@ RUN cd / && wget https://raw.githubusercontent.com/technomancy/leiningen/stable/
 RUN chmod +x /usr/bin/lein
 
 # Install jepsen 0.0.7
-RUN cd /root && \
+RUN cd / && \
     wget https://github.com/aphyr/jepsen/archive/0.0.7.tar.gz && \
     tar xzf 0.0.7.tar.gz && \
     mv jepsen-0.0.7 jepsen && \
