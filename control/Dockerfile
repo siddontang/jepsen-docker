@@ -41,8 +41,8 @@ RUN chmod 700 /root/.ssh && \
     chmod 600 /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa.pub
 
-RUN mkdir /dev
+RUN mkdir /jepsen_dev
 # Create the VOLUMN so that we can run our local jepsen test.
-VOLUME /dev
+VOLUME /jepsen_dev
 
 ADD ./bashrc /root/.bashrc

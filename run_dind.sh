@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function start() {
-    docker run --privileged -t -i -v $(pwd):/dev --name jepsen_dind siddontang/jepsen_dind
+    docker run --privileged -t -i -v $(pwd):/jepsen_dev --name jepsen_dind siddontang/jepsen_dind
 }
 
 function stop() {

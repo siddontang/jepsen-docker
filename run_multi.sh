@@ -16,7 +16,7 @@ function start() {
     if ! docker ps -a | grep -qw jepsen_control; then
         docker run -t -i --privileged --name jepsen_control \
         --link jepsen_n1:n1 --link jepsen_n2:n2 --link jepsen_n3:n3 \
-        --link jepsen_n4:n4 --link jepsen_n5:n5 -v $(pwd):/dev siddontang/jepsen_control
+        --link jepsen_n4:n4 --link jepsen_n5:n5 -v $(pwd):/jepsen_dev siddontang/jepsen_control
     else
         docker ps | grep -qw jepsen_control || docker start jepsen_control
         docker exec -t -i jepsen_control /bin/bash
