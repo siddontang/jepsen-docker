@@ -5,7 +5,7 @@ function start() {
     do
         echo "start jepsen db node $i"
         docker ps -a | grep -qw jepsen_n$i || \
-        docker run -d --name jepsen_n$i -e ROOT_PASS="root" siddontang/jepsen_db /run.sh
+        docker run -d --privileged --name jepsen_n$i -e ROOT_PASS="root" siddontang/jepsen_db /run.sh
 
         # if jepsen is not running, start it. 
         docker ps | grep -qw jepsen_n$i || docker start jepsen_n$i
